@@ -20,4 +20,4 @@ console.log("after sorting");
 
 //sorting the arrray
 var sortedArray = BubbleSort.bubbleSort(array);
-console.log(sortedArray);
+console.table(sortedArray);
