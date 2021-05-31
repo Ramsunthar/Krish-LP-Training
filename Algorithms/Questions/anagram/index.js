@@ -1,33 +1,13 @@
-const merge = (arr1, arr2) => {
-  let sorted = [];
+const algorithm = require("./algorithm");
 
-  while (arr1.length && arr2.length) {
-    if (arr1[0] < arr2[0]) sorted.push(arr1.shift());
-    else sorted.push(arr2.shift());
-  };
+var string_1 = "care";
+var string_2 = "race";
 
-  return sorted.concat(arr1.slice().concat(arr2.slice()));
-};
+var array_1 = algorithm.mergeSort(string_1.split(""));
+var array_2 = algorithm.mergeSort(string_2.split(""));
 
 
-const mergeSort = arr => {
-  if (arr.length <= 1) return arr;
-  let mid = Math.floor(arr.length / 2),
-      left = mergeSort(arr.slice(0, mid)),
-      right = mergeSort(arr.slice(mid));
-
-  return merge(left, right);
-};
-
-
-var text1 = "care";
-var text2 = "race";
-
-var arr1 = mergeSort(text1.split(""));
-var arr2 = mergeSort(text2.split(""));
-
-
-if(arr1.toString()===arr2.toString()) {
+if(array_1.toString()===array_2.toString()) {
   console.log("It is anagram");
 }
 else {

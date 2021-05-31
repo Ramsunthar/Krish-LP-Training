@@ -1,35 +1,23 @@
-var QS = require("./quicksort");
-var BS = require("./bubblesort");
+//imports
+var BubbleSort = require("./bubblesort");
+var findASCII = require("./findASCII");
+var GenerateObject = require("./generateObject");
 
-var arr = ["ba", "ab", "ca", "de","ac"];
-var a = [];
+//file reading package
+const fs = require("fs");
 
-const ASCIIVal = (string) => {
-  let count = 0;
-  let val = string.toLowerCase();
-  for (let i = 0; i < val.length; i++) {
-    count += val.charCodeAt(i);
-  }
-  return count;
-};
+var arr = [];//intial array of names
 
-// ASCIIVal(arr[0]);
+//reading file from text file
+const readFile = fs.readFileSync("./name.txt", "utf8");
+arr = readFile.split("\r\n");
 
-const obj = (array) => {
-  let val = 0;
-  for (let i = 0; i < array.length; i++) {
-    val = ASCIIVal(array[i]);
-    a.push({ name: array[i], value: val });
-  }
-};
-obj(arr);
-console.log(a);
+//getting numerical values for strings
+var array = GenerateObject.generateObject(arr);
+console.log("before sorting");
+console.log(array);
 console.log("after sorting");
 
-var sortedArray = BS.bubbleSort(a);
-console.log(sortedArray)
-
-//To retrieve the value;
-//To add the value;
-//append the object;
-//Sorting
+//sorting the arrray
+var sortedArray = BubbleSort.bubbleSort(array);
+console.log(sortedArray);
