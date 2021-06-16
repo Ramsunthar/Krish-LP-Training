@@ -1,0 +1,7 @@
+server:
+  port: 8191
+  
+#This means config files are stored locally
+spring:
+  profiles:
+    active: native
