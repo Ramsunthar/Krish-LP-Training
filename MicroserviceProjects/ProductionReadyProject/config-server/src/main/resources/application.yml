@@ -6,7 +6,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/Ramsunthar/spring-cloud-config-store
+          uri: https://github.com/Ramsunthar/microservice-rentcloud-config-store
           default-label: main
           search-paths:
           - 'service-config/*service'
