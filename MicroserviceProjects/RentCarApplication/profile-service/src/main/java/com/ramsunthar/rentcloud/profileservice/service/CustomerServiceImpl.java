@@ -1,5 +1,7 @@
 package com.ramsunthar.rentcloud.profileservice.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
@@ -20,6 +22,14 @@ public class CustomerServiceImpl implements CustomerService{
 	public Customer save(Customer customer) {
 		
 		return customerRepository.save(customer);
+	}
+
+
+
+	@Override
+	public List<Customer> show() {
+		return customerRepository.findAll();
+		
 	}
 
 	
