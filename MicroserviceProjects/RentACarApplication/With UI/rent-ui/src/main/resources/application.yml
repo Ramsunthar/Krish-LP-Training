@@ -1,0 +1,10 @@
+security:
+  oauth2:
+    client:
+      client-id: mobile
+      client-secret: pin
+      user-authorization-uri: http://localhost:9191/oauth/authorize #endpoint to authorize the user
+      access-token-uri: http://localhost:9191/oauth/token #get the token from
+    resource:      token-info-uri: http://localhost:9191/oauth/check_token #validation
+      
+server:  servlet:    session:      cookie:        name: KSESSION
