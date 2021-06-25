@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: rent
+
+#To able to create multiple instances 
+#(auto assigns the port number. 
+#or else it will try to instantiate from 
+#the same port number which is not possible)
+server:
+  port: 8191
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true  
+
+#This is to set different names for the same service instances
+#or else eureka won't indetify multiple instance with same name
+#here we are adding random generated number with the service instance name
+  instance:
+    instance-id: ${spring.application.name}-${random.int}
+    hostname: localhost
+    
+    
+#need to specify the default url of the discovery service 
+#if the location is not in localhost
