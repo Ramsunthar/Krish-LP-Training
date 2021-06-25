@@ -1,4 +1,4 @@
-import petsFile from "./pets.json"
+import petsFile from "./data/pets.json"
 import { Pet } from "./pets.model"
 import { Injectable } from "@angular/core";
 
