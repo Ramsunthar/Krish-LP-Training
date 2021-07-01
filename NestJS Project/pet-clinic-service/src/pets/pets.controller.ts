@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, Param, Post, Put, UsePipes, ValidationPipe } from '@nestjs/common';
 import { PetCreateDto } from './dto/PetCreate.dto';
 import { PetUpdateDto } from './dto/PetUpdate.dto';
 import { Pet } from './schema/Pet.schema';
@@ -19,8 +19,9 @@ export class PetsController {
     }
 
     @Post()
-    async createPet(@Body() PetCreateDto: PetCreateDto) : Promise<Pet> {
-        return await this.petsService.createPet(PetCreateDto);
+    @UsePipes(ValidationPipe)
+    async createPet(@Body() petCreateDto: PetCreateDto) : Promise<Pet> {
+        return await this.petsService.createPet(petCreateDto);
     }
 
     @Put('/:id')
@@ -29,6 +30,7 @@ export class PetsController {
     }
 
     @Delete('/:id')
+    @HttpCode(204)
     async deletePet(@Param('id') id: string): Promise<Pet> {
         return await this.petsService.deletePet(id);
     }

@@ -25,9 +25,9 @@ export class OwnerRepository {
   }
 
   async update(id: string, updateOwnerDTO: OwnerUpdateDto): Promise<Owner> {
-    console.log(updateOwnerDTO);
-    console.log(id);
-    return await this.ownerModel.findByIdAndUpdate(id, updateOwnerDTO);
+
+    await this.ownerModel.findByIdAndUpdate(id, updateOwnerDTO);
+    return this.ownerModel.findById(id);
   }
 
   async delete(id:string) : Promise<Owner> {
