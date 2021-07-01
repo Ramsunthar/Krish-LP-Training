@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
-import { Owner } from 'src/owners/schemas/Owner.schema';
+import { Owner } from 'src/owners/schema/Owner.schema';
 import { OwnerCreateDto } from './dto/OwnerCreate.dto';
 import { OwnerUpdateDto } from './dto/OwnerUpdate.dto';
 import { OwnersService } from './service/owners.service';
