@@ -13,8 +13,8 @@ export class Pet {
   petName: string
   @Prop()
   furColor: string
-  @Prop({type: mongoose.Schema.Types.ObjectId, ref : 'Owner'})
-  ownerId: Owner
+  // @Prop({type: mongoose.Schema.Types.ObjectId, ref : 'Owner'})
+  // ownerId: Owner
 }
 
 export const PetSchema = SchemaFactory.createForClass(Pet);
