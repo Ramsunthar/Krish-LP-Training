@@ -6,7 +6,6 @@ import { Pet } from '../schema/Pet.schema';
 
 @Injectable()
 export class PetsService {
-
     constructor(private petRepository: PetRepository) {}
 
     async findAll() : Promise <Pet[]> {

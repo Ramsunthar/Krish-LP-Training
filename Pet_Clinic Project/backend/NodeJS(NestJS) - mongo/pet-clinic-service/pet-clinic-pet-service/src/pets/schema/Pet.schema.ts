@@ -1,7 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Mongoose } from 'mongoose';
-import { Owner } from 'src/owners/schema/Owner.schema';
-import * as mongoose from 'mongoose';
 
 export type PetDocument = Pet & Document;
 
